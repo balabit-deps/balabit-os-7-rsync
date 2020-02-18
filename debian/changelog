@@ -1,3 +1,29 @@
+rsync (3.1.2-2.1ubuntu1.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: improper pointer arithmetic might allow
+    context-dependent attackers to have unspecified impact
+    - debian/patches/CVE-2016-9840.patch: remove offset pointer optimization
+      in inftrees.c.
+    - CVE-2016-9840
+  * SECURITY UPDATE: improper pointer arithmetic might allow
+    context-dependent attackers to have unspecified impact
+    - debian/patches/CVE-2016-9841.patch: use post-increment only in inffast.c.
+    - CVE-2016-9841
+  * SECURITY UPDATE: vectors involving left shifts of negative integers might
+    allow context-dependent attackers to have unspecified impact
+    - debian/patches/CVE-2016-9842_1.patch: avoid shifts of negative values in
+      inflateMark().
+    - debian/patches/CVE-2016-9842_2.patch: avoid casting an out-of-range
+      value to long.
+    - CVE-2016-9842
+  * SECURITY UPDATE: vectors involving big-endian CRC calculation might allow
+    context-dependent attackers to have unspecified impact
+    - debian/patches/CVE-2016-9843.patch: avoid pre-decrement of pointer in 
+      big-endian CRC calculation.
+    - CVE-2016-9843
+
+ -- Avital Ostromich <avital.ostromich@canonical.com>  Tue, 18 Feb 2020 16:03:13 -0500
+
 rsync (3.1.2-2.1ubuntu1) bionic; urgency=medium
 
   * SECURITY UPDATE: Allows remote attacker to bypass argument
